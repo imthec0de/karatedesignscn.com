@@ -1,202 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Essential Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karate Designs Co. | Innovative Design with a Spirit of Karate</title>
-  <meta name="description" content="Experience the fusion of karate’s spirit with innovative design aesthetics at Karate Designs Co. Discover bold, dynamic, and artistic solutions that honor tradition while embracing modern trends.">
+  <title>Karate Designs | Inspired by the Spirit of Karate</title>
+  <meta name="description" content="Karate Designs delivers bold, innovative design solutions infused with the discipline, strength, and elegance of karate. Discover our premium creative work.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   
-  <!-- Canonical URL for SEO -->
-  <link rel="canonical" href="https://karatedesignscn.com/">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-
+  
+  <!-- Inline CSS for a premium, Equinox-inspired design -->
   <style>
-    /* CSS Reset */
+    /* Reset and Global Styles */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
-    /* Global Styles */
     body {
       font-family: 'Roboto', sans-serif;
+      background: #000; /* Dark background for a high-end look */
+      color: #fff;
       line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
       scroll-behavior: smooth;
     }
-
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    /* Header */
+    /* Navigation Header */
     header {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-
-    header h1 {
+    header .logo {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      letter-spacing: 1px;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
     }
-
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #e67e22;
+    }
+    
     /* Hero Section */
     .hero {
-      position: relative;
-      background: url('your-image-url.jpg') no-repeat center center/cover;
       height: 100vh;
+      background: url('your-hero-image-url.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: #fff;
+      position: relative;
     }
-
-    .hero::before {
+    .hero::after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+      background: rgba(0,0,0,0.6); /* Dark overlay for text legibility */
       z-index: 1;
     }
-
     .hero-content {
       position: relative;
       z-index: 2;
+      text-align: center;
       max-width: 800px;
       padding: 0 20px;
     }
-
-    .hero h2 {
+    .hero-content h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 20px;
+      letter-spacing: 1px;
     }
-
-    .hero p {
+    .hero-content p {
       font-size: 1.2rem;
       margin-bottom: 30px;
     }
-
-    .cta-btn {
-      display: inline-block;
+    .hero-content .btn {
+      padding: 15px 35px;
       background: #e67e22;
-      color: #fff;
-      padding: 15px 30px;
       border: none;
       border-radius: 50px;
       font-size: 1.1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
-
-    .cta-btn:hover {
+    .hero-content .btn:hover {
       background: #cf711f;
     }
-
-    /* Main Content */
-    main {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
+    
+    /* Section Styles */
     section {
-      margin-bottom: 60px;
+      padding: 100px 20px;
     }
-
     section h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
+      font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 20px;
-      color: #222;
+      margin-bottom: 40px;
     }
-
-    section p {
+    .section-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .section-content p {
       font-size: 1.1rem;
       max-width: 800px;
-      margin: 0 auto 20px auto;
-      text-align: center;
+      margin: 0 auto 20px;
       line-height: 1.8;
     }
-
+    
+    /* Gallery Styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      display: block;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Contact Section */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #ccc;
+    }
+    .contact-form button {
+      padding: 15px 35px;
+      background: #e67e22;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #fff;
+    }
+    .contact-form button:hover {
+      background: #cf711f;
+    }
+    
     /* Footer */
     footer {
-      background: #222;
-      color: #fff;
+      background: #111;
+      padding: 30px 20px;
       text-align: center;
-      padding: 20px 0;
       font-size: 0.9rem;
     }
-
-    /* Responsive Media Queries */
+    
+    /* Media Queries */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
+      header .logo {
+        font-size: 1.5rem;
       }
-      .hero h2 {
+      nav ul {
+        gap: 10px;
+      }
+      .hero-content h1 {
         font-size: 2.5rem;
       }
-      .hero p {
+      .hero-content p {
         font-size: 1rem;
+      }
+      section h2 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Fixed Navigation Header -->
   <header>
-    <h1>Karate Designs Co.</h1>
+    <div class="logo">Karate Designs</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-
+  
   <!-- Hero Section -->
-  <section class="hero" aria-label="Welcome to Karate Designs">
+  <section id="home" class="hero">
     <div class="hero-content">
-      <h2>Welcome to Karate Designs</h2>
-      <p>Unleash the power of elegance and strength in every design. Experience a perfect fusion of tradition and innovation.</p>
-      <a href="#about" class="cta-btn" aria-label="Learn more about our designs">Learn More</a>
+      <h1>Designs with the Spirit of Karate</h1>
+      <p>Discover premium, innovative design solutions that blend the discipline of karate with modern aesthetics.</p>
+      <a href="#about" class="btn">Explore Our World</a>
     </div>
   </section>
-
-  <!-- Main Content -->
-  <main>
-    <!-- About Section -->
-    <section id="about" aria-label="About Us">
-      <h2>Our Passion, Your Style</h2>
+  
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-content">
+      <h2>About Us</h2>
       <p>
-        At Karate Designs Co., we embody the spirit of karate in every design. Our work is a testament to the discipline, creativity, and precision that define traditional martial arts and modern design aesthetics.
+        At Karate Designs, our passion is fueled by the energy and precision of karate. We translate these values into every creation, delivering striking designs that are both bold and refined. Our commitment to excellence merges traditional artistry with cutting‑edge innovation.
       </p>
-      <p>
-        We take pride in creating bold, dynamic, and innovative products that combine the rigor of karate with contemporary design trends.
-      </p>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" aria-label="Our Services">
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-content">
       <h2>Our Services</h2>
       <p>
-        From custom design solutions to creative consulting and exclusive collaborations, our dedicated team transforms your ideas into visually stunning, one-of-a-kind creations.
+        From branding and graphic design to digital experiences, our services capture the essence of strength, elegance, and dynamism. We work closely with you to create a visual narrative that reflects your unique identity.
       </p>
-    </section>
-  </main>
-
+    </div>
+  </section>
+  
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="section-content">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <!-- Replace the placeholder images with your own high‑quality images -->
+        <img src="https://via.placeholder.com/600x400?text=Design+1" alt="Design 1">
+        <img src="https://via.placeholder.com/600x400?text=Design+2" alt="Design 2">
+        <img src="https://via.placeholder.com/600x400?text=Design+3" alt="Design 3">
+        <img src="https://via.placeholder.com/600x400?text=Design+4" alt="Design 4">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-content">
+      <h2>Get In Touch</h2>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </div>
+    </div>
+  </section>
+  
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Karate Designs Co. All Rights Reserved.</p>
+    <p>&copy; 2025 Karate Designs. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
