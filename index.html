@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karate Designs | Inspired by the Spirit of Karate</title>
-  <meta name="description" content="Karate Designs delivers bold, innovative design solutions infused with the discipline, strength, and elegance of karate. Discover our premium creative work.">
+  <meta name="description" content="Karate Designs delivers bold, innovative design solutions infused with the discipline, strength, and elegance of karate. Discover our premium creative work and comprehensive pricing packages.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   
   <!-- Google Fonts -->
@@ -20,7 +20,7 @@
     }
     body {
       font-family: 'Roboto', sans-serif;
-      background: #000; /* Dark background for a high-end look */
+      background: #000;
       color: #fff;
       line-height: 1.6;
       scroll-behavior: smooth;
@@ -29,7 +29,7 @@
       text-decoration: none;
       color: inherit;
     }
-
+    
     /* Navigation Header */
     header {
       position: fixed;
@@ -76,7 +76,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6); /* Dark overlay for text legibility */
+      background: rgba(0,0,0,0.6);
       z-index: 1;
     }
     .hero-content {
@@ -129,6 +129,42 @@
       max-width: 800px;
       margin: 0 auto 20px;
       line-height: 1.8;
+    }
+    
+    /* Pricing Section Styles */
+    #pricing {
+      padding: 100px 20px;
+      background: #111;
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .price-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .price-card:hover {
+      transform: translateY(-5px);
+    }
+    .price-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .price-card p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .price-card .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #e67e22;
     }
     
     /* Gallery Styles */
@@ -220,6 +256,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -255,36 +292,81 @@
     </div>
   </section>
   
-  <!-- Gallery Section -->
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <div class="section-content">
+      <h2>Price List</h2>
+      <p>Explore our wide range of design services. Each package is tailored to deliver quality and impact.</p>
+      <div class="pricing-cards">
+        <div class="price-card">
+          <h3>Logo Design</h3>
+          <p>Create a memorable logo that defines your brand.</p>
+          <div class="price">$300</div>
+        </div>
+        <div class="price-card">
+          <h3>Brand Identity Package</h3>
+          <p>Full branding, including logo, color palette, and typography.</p>
+          <div class="price">$1,200</div>
+        </div>
+        <div class="price-card">
+          <h3>Website Design</h3>
+          <p>Custom, responsive website design for a powerful online presence.</p>
+          <div class="price">$2,000</div>
+        </div>
+        <div class="price-card">
+          <h3>Business Card Design</h3>
+          <p>Sleek and professional business cards for networking.</p>
+          <div class="price">$150</div>
+        </div>
+        <div class="price-card">
+          <h3>Social Media Kit</h3>
+          <p>Customized assets for your brand's social media channels.</p>
+          <div class="price">$400</div>
+        </div>
+        <div class="price-card">
+          <h3>Poster Design</h3>
+          <p>Bold posters that capture attention and showcase your art.</p>
+          <div class="price">$250</div>
+        </div>
+        <div class="price-card">
+          <h3>Apparel Design</h3>
+          <p>Creative designs for uniforms, tees, and merchandise.</p>
+          <div class="price">$500</div>
+        </div>
+        <div class="price-card">
+          <h3>Brochure Design</h3>
+          <p>Informative and eye-catching brochures for marketing.</p>
+          <div class="price">$600</div>
+        </div>
+        <div class="price-card">
+          <h3>Flyer Design</h3>
+          <p>Effective flyers for promotional events and announcements.</p>
+          <div class="price">$200</div>
+        </div>
+        <div class="price-card">
+          <h3>Packaging Design</h3>
+          <p>Innovative packaging that enhances product appeal.</p>
+          <div class="price">$800</div>
+        </div>
+        <div class="price-card">
+          <h3>Digital Illustration</h3>
+          <p>Custom illustrations tailored to your unique vision.</p>
+          <div class="price">$350</div>
+        </div>
+        <div class="price-card">
+          <h3>Merchandise Design</h3>
+          <p>Unique designs for custom merchandise and promotional products.</p>
+          <div class="price">$700</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Gallery Section with Uploaded Images -->
   <section id="gallery">
     <div class="section-content">
       <h2>Gallery</h2>
       <div class="gallery">
-        <!-- Replace the placeholder images with your own high‑quality images -->
-        <img src="https://via.placeholder.com/600x400?text=Design+1" alt="Design 1">
-        <img src="https://via.placeholder.com/600x400?text=Design+2" alt="Design 2">
-        <img src="https://via.placeholder.com/600x400?text=Design+3" alt="Design 3">
-        <img src="https://via.placeholder.com/600x400?text=Design+4" alt="Design 4">
-      </div>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="section-content">
-      <h2>Get In Touch</h2>
-      <div class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Karate Designs. All Rights Reserved.</p>
-  </footer>
-</body>
-</html>
+        <!-- Update paths if necessary, depending on your repository structure -->
+        <img src="images/Screenshot 2025-04-12 123944.png" alt="Poster: Rika Usami">
+        <img src
