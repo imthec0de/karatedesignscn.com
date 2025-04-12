@@ -1,94 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Essential Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karate Designs Co.</title>
+  <title>Karate Designs Co. | Innovative Design with a Spirit of Karate</title>
+  <meta name="description" content="Experience the fusion of karate’s spirit with innovative design aesthetics at Karate Designs Co. Discover bold, dynamic, and artistic solutions that honor tradition while embracing modern trends.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Canonical URL for SEO -->
+  <link rel="canonical" href="https://karatedesignscn.com/">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset default styles */
-    * {
+    /* CSS Reset */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
       background: #f4f4f4;
       color: #333;
+      scroll-behavior: smooth;
     }
-    .header {
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
       background: #222;
       color: #fff;
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
-      font-size: 2em;
     }
+
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    /* Hero Section */
     .hero {
-      background: url("your-image-url.jpg") no-repeat center center/cover;
-      height: 80vh;
+      position: relative;
+      background: url('your-image-url.jpg') no-repeat center center/cover;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      color: #fff;
+      justify-content: center;
       text-align: center;
-      padding: 20px;
+      color: #fff;
     }
-    .hero h1 {
-      font-size: 3em;
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
       margin-bottom: 20px;
     }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
     .cta-btn {
+      display: inline-block;
       background: #e67e22;
       color: #fff;
       padding: 15px 30px;
       border: none;
-      border-radius: 5px;
-      font-size: 1em;
+      border-radius: 50px;
+      font-size: 1.1rem;
       cursor: pointer;
-      text-decoration: none;
+      transition: background 0.3s ease;
     }
-    .content {
-      padding: 50px 20px;
+
+    .cta-btn:hover {
+      background: #cf711f;
+    }
+
+    /* Main Content */
+    main {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
       text-align: center;
+      margin-bottom: 20px;
+      color: #222;
     }
-    .footer {
+
+    section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
       background: #222;
       color: #fff;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 20px 0;
+      font-size: 0.9rem;
     }
+
+    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5em;
+      header h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <header class="header">
-    Karate Designs Co.
+  <!-- Header -->
+  <header>
+    <h1>Karate Designs Co.</h1>
   </header>
 
-  <section class="hero">
-    <h1>Welcome to Karate Designs</h1>
-    <p>Unleash the power of elegance and strength in every design.</p>
-    <a href="#learnmore" class="cta-btn">Learn More</a>
+  <!-- Hero Section -->
+  <section class="hero" aria-label="Welcome to Karate Designs">
+    <div class="hero-content">
+      <h2>Welcome to Karate Designs</h2>
+      <p>Unleash the power of elegance and strength in every design. Experience a perfect fusion of tradition and innovation.</p>
+      <a href="#about" class="cta-btn" aria-label="Learn more about our designs">Learn More</a>
+    </div>
   </section>
 
-  <section id="learnmore" class="content">
-    <h2>Our Passion, Your Style</h2>
-    <p>
-      At Karate Designs Co., we combine the art of karate with innovative design aesthetics to create bold and dynamic products.
-      Our work honors the tradition of karate while embracing modern trends.
-    </p>
-  </section>
+  <!-- Main Content -->
+  <main>
+    <!-- About Section -->
+    <section id="about" aria-label="About Us">
+      <h2>Our Passion, Your Style</h2>
+      <p>
+        At Karate Designs Co., we embody the spirit of karate in every design. Our work is a testament to the discipline, creativity, and precision that define traditional martial arts and modern design aesthetics.
+      </p>
+      <p>
+        We take pride in creating bold, dynamic, and innovative products that combine the rigor of karate with contemporary design trends.
+      </p>
+    </section>
 
-  <footer class="footer">
-    &copy; 2025 Karate Designs Co. All Rights Reserved.
+    <!-- Services Section -->
+    <section id="services" aria-label="Our Services">
+      <h2>Our Services</h2>
+      <p>
+        From custom design solutions to creative consulting and exclusive collaborations, our dedicated team transforms your ideas into visually stunning, one-of-a-kind creations.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Karate Designs Co. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
