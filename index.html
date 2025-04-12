@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karate Designs | Inspired by the Spirit of Karate</title>
-  <meta name="description" content="Karate Designs delivers bold, innovative design solutions infused with the discipline, strength, and elegance of karate. Discover our premium creative work and comprehensive pricing packages.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karate Designs | Modern Design with the Spirit of Karate</title>
+  <meta name="description" content="Karate Designs delivers bold, innovative design solutions infused with the discipline, strength, and elegance of karate. Discover our premium creative work, modern style, and comprehensive pricing packages." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <!-- Inline CSS for a premium, Equinox-inspired design -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
-    /* Reset and Global Styles */
+    /* CSS Variables for easy theming */
+    :root {
+      --primary-color: #e67e22;
+      --secondary-color: #cf711f;
+      --background-color: #000;
+      --text-color: #fff;
+      --header-bg: rgba(0, 0, 0, 0.85);
+      --section-bg: #111;
+    }
+
+    /* Global Reset */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -20,8 +29,8 @@
     }
     body {
       font-family: 'Roboto', sans-serif;
-      background: #000;
-      color: #fff;
+      background: var(--background-color);
+      color: var(--text-color);
       line-height: 1.6;
       scroll-behavior: smooth;
     }
@@ -29,18 +38,20 @@
       text-decoration: none;
       color: inherit;
     }
-    
-    /* Navigation Header */
+
+    /* Fixed Header */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      background: var(--header-bg);
+      backdrop-filter: blur(5px);
       z-index: 1000;
-      padding: 10px 20px;
+      padding: 15px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
     header .logo {
       font-family: 'Montserrat', sans-serif;
@@ -50,16 +61,18 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
     nav ul li a {
       font-size: 1rem;
-      transition: color 0.3s;
+      padding: 5px 8px;
+      transition: color 0.3s, border-bottom 0.3s;
     }
     nav ul li a:hover {
-      color: #e67e22;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
     }
-    
+
     /* Hero Section */
     .hero {
       height: 100vh;
@@ -68,15 +81,16 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
     }
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
       z-index: 1;
     }
     .hero-content {
@@ -85,6 +99,7 @@
       text-align: center;
       max-width: 800px;
       padding: 0 20px;
+      animation: fadeIn 1.2s ease-out;
     }
     .hero-content h1 {
       font-family: 'Montserrat', sans-serif;
@@ -98,7 +113,7 @@
     }
     .hero-content .btn {
       padding: 15px 35px;
-      background: #e67e22;
+      background: var(--primary-color);
       border: none;
       border-radius: 50px;
       font-size: 1.1rem;
@@ -106,9 +121,14 @@
       transition: background 0.3s;
     }
     .hero-content .btn:hover {
-      background: #cf711f;
+      background: var(--secondary-color);
     }
-    
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* Section Styles */
     section {
       padding: 100px 20px;
@@ -117,12 +137,25 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
     }
     .section-content {
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
+      padding: 0 20px;
     }
     .section-content p {
       font-size: 1.1rem;
@@ -130,67 +163,68 @@
       margin: 0 auto 20px;
       line-height: 1.8;
     }
-    
-    /* Pricing Section Styles */
+
+    /* Pricing Section */
     #pricing {
-      padding: 100px 20px;
-      background: #111;
+      background: var(--section-bg);
     }
     .pricing-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
+      gap: 25px;
+      margin-top: 50px;
     }
     .price-card {
       background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
+      padding: 30px 20px;
       border-radius: 10px;
       text-align: center;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .price-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
     .price-card h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.5rem;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     .price-card p {
       font-size: 1rem;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     .price-card .price {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: bold;
-      color: #e67e22;
+      color: var(--primary-color);
     }
-    
-    /* Gallery Styles */
+
+    /* Gallery Section */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 15px;
-      margin-top: 30px;
+      gap: 20px;
+      margin-top: 40px;
     }
     .gallery img {
       width: 100%;
       display: block;
       border-radius: 5px;
-      transition: transform 0.3s;
+      transition: transform 0.3s, filter 0.3s;
     }
     .gallery img:hover {
       transform: scale(1.05);
+      filter: brightness(1.1);
     }
-    
+
     /* Contact Section */
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
       text-align: left;
-      padding: 20px;
-      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
     }
     .contact-form input,
@@ -200,6 +234,8 @@
       margin-bottom: 20px;
       border: none;
       border-radius: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--text-color);
     }
     .contact-form input::placeholder,
     .contact-form textarea::placeholder {
@@ -207,43 +243,33 @@
     }
     .contact-form button {
       padding: 15px 35px;
-      background: #e67e22;
+      background: var(--primary-color);
       border: none;
       border-radius: 50px;
       font-size: 1.1rem;
       cursor: pointer;
       transition: background 0.3s;
-      color: #fff;
+      color: var(--text-color);
     }
     .contact-form button:hover {
-      background: #cf711f;
+      background: var(--secondary-color);
     }
-    
+
     /* Footer */
     footer {
-      background: #111;
+      background: var(--section-bg);
       padding: 30px 20px;
       text-align: center;
       font-size: 0.9rem;
     }
-    
-    /* Media Queries */
+
+    /* Responsive Design */
     @media (max-width: 768px) {
-      header .logo {
-        font-size: 1.5rem;
-      }
-      nav ul {
-        gap: 10px;
-      }
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      section h2 {
-        font-size: 2rem;
-      }
+      header .logo { font-size: 1.5rem; }
+      nav ul { gap: 15px; }
+      .hero-content h1 { font-size: 2.5rem; }
+      .hero-content p { font-size: 1rem; }
+      section h2 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -262,7 +288,7 @@
       </ul>
     </nav>
   </header>
-  
+
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
@@ -271,7 +297,7 @@
       <a href="#about" class="btn">Explore Our World</a>
     </div>
   </section>
-  
+
   <!-- About Section -->
   <section id="about">
     <div class="section-content">
@@ -281,7 +307,7 @@
       </p>
     </div>
   </section>
-  
+
   <!-- Services Section -->
   <section id="services">
     <div class="section-content">
@@ -291,7 +317,7 @@
       </p>
     </div>
   </section>
-  
+
   <!-- Pricing Section -->
   <section id="pricing">
     <div class="section-content">
@@ -361,12 +387,36 @@
       </div>
     </div>
   </section>
-  
-  <!-- Gallery Section with Uploaded Images -->
+
+  <!-- Gallery Section -->
   <section id="gallery">
     <div class="section-content">
       <h2>Gallery</h2>
       <div class="gallery">
-        <!-- Update paths if necessary, depending on your repository structure -->
+        <!-- Ensure these file paths match your GitHub repository structure -->
         <img src="images/Screenshot 2025-04-12 123944.png" alt="Poster: Rika Usami">
-        <img src
+        <img src="images/Screenshot 2025-04-12 123955.png" alt="Poster: Uliana">
+        <img src="images/Screenshot 2025-04-12 124007.png" alt="Poster: Leonie">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-content">
+      <h2>Get In Touch</h2>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Karate Designs. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
